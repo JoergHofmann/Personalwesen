@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name = "personalwesen">
+	<target name="prepare" unless="done">
+		<property environment="env" />
+		<property name="prefix" value="KBM" />
+		<property name="ftpUser" value="jhoeho"/>
+		<property name="ftpPw" value="J13ei$G$er64H"/>
+		<property name="ftpServer" value="sftp://www342.your-server.de"/>
+		<property name="ftpPfad" value="public_html/pecunia-non-olet/liascript"/>
+		<delete includeemptydirs="true">
+		    <fileset dir = "0_TMP" includes = "**/*"/>
+		    <fileset dir = "0_OUT" includes = "**/*"/>
+		    <!-- <fileset dir = "${env.local_www_dir}/${ant.project.name}" includes = "**/*"/> -->
+		</delete>
+		<!-- Alle temporären Verzeichnisse leeren. -->
+		<delete includeemptydirs="true">
+			<fileset dir = "0_TMP" includes = "**/*"/>
+			<fileset dir = "0_OUT" includes = "**/*"/>
+		    <!-- <fileset dir = "0_${prefix}_HUGO/content" includes = "**/*"/>
+			<fileset dir = "0_${prefix}_HUGO/assets" includes = "**/*"/>
+			<fileset dir = "${env.local_www_dir}/${ant.project.name}" includes = "**/*"/> -->
+		</delete>
+		<copy todir="0_TMP" overwrite="true">
+			<fileset dir=".">
+				<include name="*.lua" />
+				<include name="*.yaml" />
+				<include name="*.tex" />
+				<include name="*.html" />
+				<include name="*.md" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="copy4lia" unless="done">
+	    <mkdir dir="0_LIA/images" />
+	    <mkdir dir="0_LIA/scripts" />
+	    <mkdir dir="0_LIA/css" />
+	    <mkdir dir="0_LIA/videos" />
+	    <copy todir="0_LIA/images" overwrite="true">
+			<fileset dir="images" includes="*.png" />
+			<fileset dir="images" includes="*.svg" />
+			<fileset dir="images" includes="*.gif" />
+			<fileset dir="images" includes="*.jpg" />
+			<fileset dir="images" includes="*.pdf" />
+		</copy>
+	    <copy todir="0_LIA/css" overwrite="true">
+			<fileset dir="css" includes="*.css" />
+		</copy>
+	    <copy todir="0_LIA/scripts" overwrite="true">
+			<fileset dir="scripts" includes="*.js" />
+		</copy>
+	</target>
+
+	<target name="copy4hugo" depends="prepare" unless="done">
+		<mkdir dir="0_HUGO/assets/images" />
+		<copy todir="0_HUGO/assets/images" overwrite="true">
+			<fileset dir="images" includes="*.png" />
+			<fileset dir="images" includes="*.svg" />
+			<fileset dir="images" includes="*.gif" />
+			<fileset dir="images" includes="*.jpg" />
+			<fileset dir="images" includes="*.pdf" />
+		</copy>
+        <copy file="hugo/hugo.yaml" tofile="0_HUGO/hugo.yaml" />
+		<copy todir="0_HUGO/layouts/partials" overwrite="true">
+			<fileset dir="hugo/layouts/partials">
+				<include name="*.*" />
+			</fileset>
+		</copy>
+		<copy todir="0_TMP" >
+			<fileset dir="hugo">
+				<include name="*.lua" />
+				<include name="*.yaml" />
+				<include name="*.tex" />
+				<include name="*.html" />
+				<include name="*.md" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="copy4pdf" depends="prepare" unless="done">
+		<copy todir="0_TMP" overwrite="true">
+			<fileset dir="images" includes="*.png" />
+			<fileset dir="images" includes="*.svg" />
+			<fileset dir="images" includes="*.gif" />
+			<fileset dir="images" includes="*.jpg" />
+			<fileset dir="images" includes="*.pdf" />
+		</copy>
+	</target>
+
+	<target name="ihk-lia" depends="prepare" unless="done">
+	    <antcall target="copy4lia" />
+	    <exec executable="ypp" dir="0_TMP" output="0_LIA/ihk-pruefungen.md" logError="true">
+		<arg line="-l liascript.lua ihk-pruefungen.md" />
+	    </exec>
+	    <property name="done" value="done" />
+	</target>
+
+
+
+	<target name="pt-lia" depends="prepare" unless="done">
+	    <antcall target="copy4lia" />
+	    <exec executable="ypp" dir="0_TMP" output="0_LIA/pt-${ant.project.name}.md" logError="true">
+		<arg line="-l liascript.lua pruefungstraining-lia.md" />
+	    </exec>
+	    <property name="done" value="done" />
+	</target>
+
+	<target name="lia" depends="prepare" unless="done">
+	    <antcall target="copy4lia" />
+	    <exec executable="ypp" dir="0_TMP" output="0_LIA/${ant.project.name}.md" logError="true">
+		<arg line="-l liascript.lua main-lia.md" />
+	    </exec>
+	    <property name="done" value="done" />
+	</target>
+
+
+	<target name="hugo" depends="prepare" unless="done">
+	    <antcall target="copy4hugo" />
+	    <exec executable="ypp" output="0_${prefix}_HUGO/content/_index.pdc" logError="true">
+		<arg line="-l hugo.lua titelseite.md" />
+	    </exec>
+	    <apply executable="ypp" dir="0_TMP" dest="0_TMP" logError="true">
+		<arg line="-l hugo.lua" />
+		<srcfile />
+		<arg line="-o " />
+		<targetfile />
+		<fileset dir="0_TMP">
+			<include name="${prefix}-kap*.md" />
+			<exclude name="${prefix}-kap-h.md" />
+		</fileset>
+		<mapper type="glob" from="*.md" to="*.pdc" />
+	    </apply>
+	    <property name="done" value="done" />
+	</target>
+
+
+
+	<target name="pt-pdf" depends="copy4pdf" unless="done">
+		<exec executable="ypp" dir = "0_TMP" output="0_TMP/pt-${ant.project.name}.md" logError="true">
+			<arg line="-l context.lua pruefungstraining-pdf.md" />
+		</exec>
+		<exec executable="pandoc" dir="0_TMP">
+			<arg line="pt-${ant.project.name}.md -t context+ntb+raw_tex --toc=true  --template=jho -s -o pt-${ant.project.name}.tex" />
+		</exec>
+		<exec executable="context" dir="0_TMP">
+			<arg line="pt-${ant.project.name}.tex --result=pt-${ant.project.name}.pdf" />
+		</exec>
+		<move file="0_TMP/pt-${ant.project.name}.pdf" tofile="0_OUT/pt-${ant.project.name}.pdf" />
+		<property name="done" value="done" />
+	</target>
+
+	<target name="pdf" depends="copy4pdf" unless="done">
+		<exec executable="ypp" dir = "0_TMP" output="0_TMP/${ant.project.name}.md" logError="true">
+			<arg line="-l context.lua main-pdf.md" />
+		</exec>
+		<exec executable="pandoc" dir="0_TMP">
+			<arg line="${ant.project.name}.md -t context+ntb+raw_tex --toc=true  --template=jho -s -o ${ant.project.name}.tex" />
+		</exec>
+		<exec executable="context" dir="0_TMP">
+			<arg line="${ant.project.name}.tex --result=${ant.project.name}.pdf" />
+		</exec>
+		<move file="0_TMP/${ant.project.name}.pdf" tofile="0_OUT/${ant.project.name}.pdf" />
+		<property name="done" value="done" />
+	</target>
+</project>
