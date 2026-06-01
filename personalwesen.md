@@ -1,16 +1,16 @@
-## Aufgaben und Ziele
+# Aufgaben und Ziele
 
 @include "aufgaben.md"
 
 
 
-## Den Personalbestand analysieren
+# Den Personalbestand analysieren
 
 @include "pAnalyse.md"
 
 
-## Arbeits- und Personalrecht
+# Arbeits- und Personalrecht
 
-## Lohn und Gehalt
+# Lohn und Gehalt
 
 @include "lohn-gehalt.md"

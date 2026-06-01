@@ -2,7 +2,7 @@
 author: @(Autor.name)
 email: @(Autor.mail)
 language: @(Projekt.shortlang)
-title: @(Projekt.title)
+title: Aufgaben zum Personalwesen
 subtitle: @(Projekt.subtitle)
 www_cover: @(Projekt.wwwCover)
 date: @(Monat[heute.month].MMMM) @(heute.year)
@@ -29,5 +29,5 @@ Git: @version
 
 </div>
 
-@include "personalwesen.md"
+@include "personalwesen-aufgaben.md"
 

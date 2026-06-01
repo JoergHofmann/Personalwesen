@@ -300,6 +300,17 @@ Das Unternehmen installiert in jedem PC ein Programm zur Überwachung der Mitarb
 ]]
 
 
+Welche Klauseln in allgemeinen Geschäftsbedingungen sind unwirksam?
+
+[[x]] a. Nach Vertragsschluss verdoppelt sich der Kaufpreis.
+[[ ]] b. Eigentum bleibt bis zur Vollständigen Bezahlung Eigentum des Verkäufers.
+[[x]] c. Anstelle der Kaufsache kann der Verkäufer auch eine andere nicht näher beschriebene Sache liefern.
+[[x]] d. Mit Unterzeichnung des Kaufvertrags tritt der Käufer alle Sachmängelhaftungsfristen an den Verkäufer ab.
+[[ ]] e. Die Lieferzeit ist unbestimmt, da es z.T. zu langen Lieferverzögerungen kommen kann.
+[[ ]] f. Gerichtsstand ist der Firmensitz des Verkäufers.
+
+
+
 
 
 

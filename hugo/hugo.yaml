@@ -1,0 +1,4 @@
+baseURL: https://example.org/
+languageCode: de-DE
+title: Grundlagen Personalwesen
+theme: hugo-theme-relearn
