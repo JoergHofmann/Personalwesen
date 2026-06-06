@@ -51,14 +51,81 @@ So soll ein gewisser Wettbewerb unter den Krankenkassen ermöglicht werden.
 
 #### Die Rentenversicherung
 
+|                         |                           |
+|------------------------:|:--------------------------|
+|Aufgabe: |         |
+|         |      |
+|Träger:   |       |
+|        |         |
+|Versicherungspflicht:  |            |
+|         |
+|Leistungen:  |             |
+|   |     |
+|Beitrag:     |         |
+|           |        |
+|Beitragsbemessungsgrenze:      |        |
+
+
+
 
 #### Die Krankenversicherung
+
+|                         |                           |
+|------------------------:|:--------------------------|
+|Aufgabe: |         |
+|         |      |
+|Träger:   |       |
+|        |         |
+|Versicherungspflicht:  |            |
+|         |
+|Leistungen:  |             |
+|   |     |
+|Beitrag:     |         |
+|           |        |
+|Beitragsbemessungsgrenze:      |        |
+
+
+
 
 
 #### Die Pflegeversicherung
 
+|                         |                           |
+|------------------------:|:--------------------------|
+|Aufgabe: |         |
+|         |      |
+|Träger:   |       |
+|        |         |
+|Versicherungspflicht:  |            |
+|         |
+|Leistungen:  |             |
+|   |     |
+|Beitrag:     |         |
+|           |        |
+|Beitragsbemessungsgrenze:      |        |
+
+
+
+
 
 #### Die Arbeitslosenversicherung
+
+|                         |                           |
+|------------------------:|:--------------------------|
+|Aufgabe: |         |
+|         |      |
+|Träger:   |       |
+|        |         |
+|Versicherungspflicht:  |            |
+|         |
+|Leistungen:  |             |
+|   |     |
+|Beitrag:     |         |
+|           |        |
+|Beitragsbemessungsgrenze:      |        |
+
+
+
 
 ### Arbeitszeitmodelle
 

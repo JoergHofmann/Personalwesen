@@ -6,7 +6,7 @@ title: Personalwesen
 subtitle: Grundlagen für die kaufmännische Ausbildung
 www_cover: job-interview.svg
 date: Juni 2026
-version: 00c9418
+version: 2db8378
 
 icon: images/strichmaennchen.svg
 date: Juni 2026
@@ -124,14 +124,81 @@ So soll ein gewisser Wettbewerb unter den Krankenkassen ermöglicht werden.
 
 #### Die Rentenversicherung
 
+|                         |                           |
+|------------------------:|:--------------------------|
+|Aufgabe: |         |
+|         |      |
+|Träger:   |       |
+|        |         |
+|Versicherungspflicht:  |            |
+|         |
+|Leistungen:  |             |
+|   |     |
+|Beitrag:     |         |
+|           |        |
+|Beitragsbemessungsgrenze:      |        |
+
+
+
 
 #### Die Krankenversicherung
+
+|                         |                           |
+|------------------------:|:--------------------------|
+|Aufgabe: |         |
+|         |      |
+|Träger:   |       |
+|        |         |
+|Versicherungspflicht:  |            |
+|         |
+|Leistungen:  |             |
+|   |     |
+|Beitrag:     |         |
+|           |        |
+|Beitragsbemessungsgrenze:      |        |
+
+
+
 
 
 #### Die Pflegeversicherung
 
+|                         |                           |
+|------------------------:|:--------------------------|
+|Aufgabe: |         |
+|         |      |
+|Träger:   |       |
+|        |         |
+|Versicherungspflicht:  |            |
+|         |
+|Leistungen:  |             |
+|   |     |
+|Beitrag:     |         |
+|           |        |
+|Beitragsbemessungsgrenze:      |        |
+
+
+
+
 
 #### Die Arbeitslosenversicherung
+
+|                         |                           |
+|------------------------:|:--------------------------|
+|Aufgabe: |         |
+|         |      |
+|Träger:   |       |
+|        |         |
+|Versicherungspflicht:  |            |
+|         |
+|Leistungen:  |             |
+|   |     |
+|Beitrag:     |         |
+|           |        |
+|Beitragsbemessungsgrenze:      |        |
+
+
+
 
 ### Arbeitszeitmodelle
 
