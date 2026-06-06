@@ -17,8 +17,7 @@ Sozialversicherungsträger abzuführen. Und genau darum geht es jetzt.
 
 <div style="width: 30%; margin:auto">![](images/Bismarck_am_Schreibtisch.png)</div>
 
-o soll ein gewisser Wettbewerb unter den 
-ganz bestimmt. Es ist Otto von Bismarck, der erste deutsche Reichskanzler. Dieser ist nicht
+Wenn sie im Geschichtsunterricht aufgepasst haben ganz bestimmt. Es ist Otto von Bismarck, der erste deutsche Reichskanzler. Dieser ist nicht
 nur als Namensgeber für eine [Fischspezialität](https://de.wikipedia.org/wiki/Bismarckhering), sondern auch als Vater der deutschen Sozielversicherungen bekannt.
 
 Im 19. Jahrhundert kam es durch die Industrialisierung zu gravierenden gesellschaftlichen Veränderungen.
