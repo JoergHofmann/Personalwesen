@@ -1,7 +1,7 @@
 <section>
 
-## Zum Einstieg: Das Zwiebelpapier
-Es könnte so schön sein, wenn jeden Monat den Betrag ausgezahlt bekämen,
+### Zum Einstieg: Das Zwiebelpapier
+Es könnte so schön sein, wenn wir jeden Monat den Betrag ausgezahlt bekämen,
 der auch im Arbeitsvertrag genannt ist.Stattdessen bekomen wir jeden Monat eine
 Aufstellung, was uns alles abgezogen wurde, und wie beim Zwiebelschneiden
 kommen uns dann die Tränen.
@@ -10,12 +10,16 @@ Es sind zwei Gruppen von Abzügen, die Beiträge zu den Sozialversicherungen
 und die steuerlichen Abzüge. Als Arbeitgeber sind wir verpflichtet, die
 Abzüge einzubehalten und an die zuständigen Stellen, Finanzämter und
 Sozialversicherungsträger abzuführen. Und genau darum geht es jetzt.
+</section>
 
-## Die Sozialversicherungen
+<section>
+### Die Sozialversicherungen
 
-<div style="width: 50%; margin:auto">![](images/Bismarck_am_Schreibtisch.png)</div>
+#### Wie alles begann
 
-Kommt Ihnen dieser Herr bekannt vor? Wenn Sie im Geschichtsunterricht aufgepasst haben,
+<div style="width: 30%; margin:auto">![](images/Bismarck_am_Schreibtisch.png)</div>
+
+Kommt Ihnen dieser Herr bekannt vor? Wenn Sie im Geschichtsunterricht aufgepasst haben
 ganz bestimmt. Es ist Otto von Bismarck, der erste deutsche Reichskanzler. Dieser ist nicht
 nur als Namensgeber für eine [Fischspezialität](https://de.wikipedia.org/wiki/Bismarckhering), sondern auch als Vater der deutschen Sozielversicherungen bekannt.
 
@@ -35,10 +39,19 @@ in der sogenannten [Kaiserlichen Botschaft](https://de.wikipedia.org/wiki/Kaiser
 
 später kamen noch die Arbeitslosenversicherung (1927) und die Pflegeversicherung (1995) dazu.
 
+Die wohl wichtigste Änderung war die [Rentenreform von 1957](https://de.wikipedia.org/wiki/Rentenreform_1957),
+als die Finanzierung vom Kapitaldeckungs- auf das Umlageverfahren umgestellt und die Rentenhöhe an die 
+Bruttolöhne gekoppelt wurde. Seitdem werden die Renten und die übrigen Sozialversicherungen nicht mehr durch
+ansparen, sondern durch die Beiträge der Versicherten finanziert. Man spricht daher auch vom Generationenvertrag.
 
-## Arbeitszeitmodelle
+#### Sozialversicherungpflicht
 
-## Arbeitsentgelt, Brutto
+Alle Arbeitnehmer sind, sofern sie mehr als geringfügig beschäftigt sind (Minijobber), in den Sozialversicherungen pflichtversichert. 
+Der Gesetzgeber legt die Beitragssätze fest. Krankenkassen dürfen neben dem gesetzlichen Beitrag einen Zusatzbeitrag erheben.
+
+### Arbeitszeitmodelle
+
+### Arbeitsentgelt, Brutto
 
 * Monatsgehälter
 * Wochen- und Tageslöhne
@@ -49,32 +62,35 @@ später kamen noch die Arbeitslosenversicherung (1927) und die Pflegeversicherun
 * Zahlungen aus dem abgelaufenen Jahr
 
 
-## steuerliche und sozialversicherungsrechtliche Abzüge
+### steuerliche und sozialversicherungsrechtliche Abzüge
 
 * Steuer- und Sozialversicherungspflicht
 * Brutto und Netto
 * Berechnungsgrößen
 
 
-## Termine und Fristen
+### Termine und Fristen
 
 
 
-## Gesetzliche Abzugsbeträge
+### Gesetzliche Abzugsbeträge
 * Steuer- und Sozialversicherungspflicht
 * Brutto und Netto
 * Berechnungsgrößen
 
 
-## Teillohnzahlungszeiträume
+### Teillohnzahlungszeiträume
 
 * Beim Lohnsteuerabzug
 * In der Sozialversicherung
 
 
 
-## Aufgaben
+### Aufgaben
 
 @include "uebungen.md"
 
 </section>
+
+
+Sozialversicherungen, Arbeitszeitmodelle, Arbeitsentgelt, Lohnarten, Personalzusatzkosten, Brutto- und Nettoentgelt (ELStAM), Verbuchung Steuerabzugsbeträge und Sozialversicherungsabgaben, Fristeneinhaltung

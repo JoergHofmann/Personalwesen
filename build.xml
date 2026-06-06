@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name = "personalwesen">
+<project name = "Personalwesen">
 	<target name="prepare" unless="done">
 		<property environment="env" />
 		<property name="prefix" value="KBM" />
@@ -33,21 +33,21 @@
 	</target>
 
 	<target name="copy4lia" unless="done">
-	    <mkdir dir="0_LIA/images" />
-	    <mkdir dir="0_LIA/scripts" />
-	    <mkdir dir="0_LIA/css" />
-	    <mkdir dir="0_LIA/videos" />
-	    <copy todir="0_LIA/images" overwrite="true">
+	    <mkdir dir="${ant.project.name}.lia/images" />
+	    <mkdir dir="${ant.project.name}.lia/scripts" />
+	    <mkdir dir="${ant.project.name}.lia/css" />
+	    <mkdir dir="${ant.project.name}.lia/videos" />
+	    <copy todir="${ant.project.name}.lia/images" overwrite="true">
 			<fileset dir="images" includes="*.png" />
 			<fileset dir="images" includes="*.svg" />
 			<fileset dir="images" includes="*.gif" />
 			<fileset dir="images" includes="*.jpg" />
 			<fileset dir="images" includes="*.pdf" />
 		</copy>
-	    <copy todir="0_LIA/css" overwrite="true">
+	    <copy todir="${ant.project.name}.lia/css" overwrite="true">
 			<fileset dir="css" includes="*.css" />
 		</copy>
-	    <copy todir="0_LIA/scripts" overwrite="true">
+	    <copy todir="${ant.project.name}.lia/scripts" overwrite="true">
 			<fileset dir="scripts" includes="*.js" />
 		</copy>
 	</target>
@@ -90,7 +90,7 @@
 
 	<target name="ihk-lia" depends="prepare" unless="done">
 	    <antcall target="copy4lia" />
-	    <exec executable="ypp" dir="0_TMP" output="0_LIA/ihk-pruefungen.md" logError="true">
+	    <exec executable="ypp" dir="0_TMP" output="Personalwesen.lia/ihk-pruefungen.md" logError="true">
 		<arg line="-l liascript.lua ihk-pruefungen.md" />
 	    </exec>
 	    <property name="done" value="done" />
@@ -100,7 +100,7 @@
 
 	<target name="pt-lia" depends="prepare" unless="done">
 	    <antcall target="copy4lia" />
-	    <exec executable="ypp" dir="0_TMP" output="0_LIA/pt-${ant.project.name}.md" logError="true">
+	    <exec executable="ypp" dir="0_TMP" output="Personalwesen.lia/pt-${ant.project.name}.md" logError="true">
 		<arg line="-l liascript.lua pruefungstraining-lia.md" />
 	    </exec>
 	    <property name="done" value="done" />
@@ -108,7 +108,7 @@
 
 	<target name="lia-aufgaben" depends="prepare" unless="done">
 	    <antcall target="copy4lia" />
-	    <exec executable="ypp" dir="0_TMP" output="0_LIA/${ant.project.name}.md" logError="true">
+	    <exec executable="ypp" dir="0_TMP" output="Personalwesen.lia/${ant.project.name}.md" logError="true">
 		<arg line="-l liascript.lua main-lia-aufgaben.md" />
 	    </exec>
 	    <property name="done" value="done" />
@@ -117,7 +117,7 @@
 
 	<target name="lia" depends="prepare" unless="done">
 	    <antcall target="copy4lia" />
-	    <exec executable="ypp" dir="0_TMP" output="0_LIA/${ant.project.name}.md" logError="true">
+	    <exec executable="ypp" dir="0_TMP" output="${ant.project.name}.lia/${ant.project.name}.md" logError="true">
 		<arg line="-l liascript.lua main-lia.md" />
 	    </exec>
 	    <property name="done" value="done" />
