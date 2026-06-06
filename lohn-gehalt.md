@@ -19,7 +19,7 @@ Sozialversicherungsträger abzuführen. Und genau darum geht es jetzt.
 
 <div style="width: 30%; margin:auto">![](images/Bismarck_am_Schreibtisch.png)</div>
 
-Kommt Ihnen dieser Herr bekannt vor? Wenn Sie im Geschichtsunterricht aufgepasst haben
+o soll ein gewisser Wettbewerb unter den 
 ganz bestimmt. Es ist Otto von Bismarck, der erste deutsche Reichskanzler. Dieser ist nicht
 nur als Namensgeber für eine [Fischspezialität](https://de.wikipedia.org/wiki/Bismarckhering), sondern auch als Vater der deutschen Sozielversicherungen bekannt.
 
@@ -48,6 +48,19 @@ ansparen, sondern durch die Beiträge der Versicherten finanziert. Man spricht d
 
 Alle Arbeitnehmer sind, sofern sie mehr als geringfügig beschäftigt sind (Minijobber), in den Sozialversicherungen pflichtversichert. 
 Der Gesetzgeber legt die Beitragssätze fest. Krankenkassen dürfen neben dem gesetzlichen Beitrag einen Zusatzbeitrag erheben.
+So soll ein gewisser Wettbewerb unter den Krankenkassen ermöglicht werden.
+
+
+#### Die Rentenversicherung
+
+
+#### Die Krankenversicherung
+
+
+#### Die Pflegeversicherung
+
+
+#### Die Arbeitslosenversicherung
 
 ### Arbeitszeitmodelle
 

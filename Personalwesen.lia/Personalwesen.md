@@ -6,14 +6,13 @@ title: Personalwesen
 subtitle: Grundlagen für die kaufmännische Ausbildung
 www_cover: job-interview.svg
 date: Juni 2026
-version: b553a36
+version: 07a1e18
 
 icon: images/strichmaennchen.svg
 date: Juni 2026
 link: css/jho-lia.css
 logo: images/strichmaennchen.svg
 wilhelm1: https://de.wikipedia.org/wiki
-script:   https://cdn.jsdelivr.net/gh/MINT-the-GAP/lia-navigation@0.0.1/dist/index.js
 -->
 
 # @title
@@ -93,7 +92,7 @@ Sozialversicherungsträger abzuführen. Und genau darum geht es jetzt.
 
 <div style="width: 30%; margin:auto">![](images/Bismarck_am_Schreibtisch.png)</div>
 
-Kommt Ihnen dieser Herr bekannt vor? Wenn Sie im Geschichtsunterricht aufgepasst haben,
+o soll ein gewisser Wettbewerb unter den 
 ganz bestimmt. Es ist Otto von Bismarck, der erste deutsche Reichskanzler. Dieser ist nicht
 nur als Namensgeber für eine [Fischspezialität](https://de.wikipedia.org/wiki/Bismarckhering), sondern auch als Vater der deutschen Sozielversicherungen bekannt.
 
@@ -116,8 +115,25 @@ später kamen noch die Arbeitslosenversicherung (1927) und die Pflegeversicherun
 Die wohl wichtigste Änderung war die [Rentenreform von 1957](https://de.wikipedia.org/wiki/Rentenreform_1957),
 als die Finanzierung vom Kapitaldeckungs- auf das Umlageverfahren umgestellt und die Rentenhöhe an die 
 Bruttolöhne gekoppelt wurde. Seitdem werden die Renten und die übrigen Sozialversicherungen nicht mehr durch
-ansparen, sondern durch die Beiträge der Versicherten finanziert. Man spricht daher auch vom Generationenvertrag. 
+ansparen, sondern durch die Beiträge der Versicherten finanziert. Man spricht daher auch vom Generationenvertrag.
 
+#### Sozialversicherungpflicht
+
+Alle Arbeitnehmer sind, sofern sie mehr als geringfügig beschäftigt sind (Minijobber), in den Sozialversicherungen pflichtversichert. 
+Der Gesetzgeber legt die Beitragssätze fest. Krankenkassen dürfen neben dem gesetzlichen Beitrag einen Zusatzbeitrag erheben.
+So soll ein gewisser Wettbewerb unter den Krankenkassen ermöglicht werden.
+
+
+#### Die Rentenversicherung
+
+
+#### Die Krankenversicherung
+
+
+#### Die Pflegeversicherung
+
+
+#### Die Arbeitslosenversicherung
 
 ### Arbeitszeitmodelle
 
