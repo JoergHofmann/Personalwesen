@@ -1,5 +1,3 @@
-<section>
-
 ### Zum Einstieg: Das Zwiebelpapier
 Es könnte so schön sein, wenn wir jeden Monat den Betrag ausgezahlt bekämen,
 der auch im Arbeitsvertrag genannt ist.Stattdessen bekomen wir jeden Monat eine
@@ -10,9 +8,9 @@ Es sind zwei Gruppen von Abzügen, die Beiträge zu den Sozialversicherungen
 und die steuerlichen Abzüge. Als Arbeitgeber sind wir verpflichtet, die
 Abzüge einzubehalten und an die zuständigen Stellen, Finanzämter und
 Sozialversicherungsträger abzuführen. Und genau darum geht es jetzt.
-</section>
 
-<section>
+
+
 ### Die Sozialversicherungen
 
 #### Wie alles begann
@@ -102,8 +100,3 @@ So soll ein gewisser Wettbewerb unter den Krankenkassen ermöglicht werden.
 ### Aufgaben
 
 @include "uebungen.md"
-
-</section>
-
-
-Sozialversicherungen, Arbeitszeitmodelle, Arbeitsentgelt, Lohnarten, Personalzusatzkosten, Brutto- und Nettoentgelt (ELStAM), Verbuchung Steuerabzugsbeträge und Sozialversicherungsabgaben, Fristeneinhaltung

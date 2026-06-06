@@ -6,7 +6,7 @@ title: Personalwesen
 subtitle: Grundlagen für die kaufmännische Ausbildung
 www_cover: job-interview.svg
 date: Juni 2026
-version: 07a1e18
+version: 4b9bc31
 
 icon: images/strichmaennchen.svg
 date: Juni 2026
@@ -71,8 +71,6 @@ Um zu erkennen, was
 
 ## Lohn und Gehalt
 
-<section>
-
 ### Zum Einstieg: Das Zwiebelpapier
 Es könnte so schön sein, wenn wir jeden Monat den Betrag ausgezahlt bekämen,
 der auch im Arbeitsvertrag genannt ist.Stattdessen bekomen wir jeden Monat eine
@@ -83,9 +81,9 @@ Es sind zwei Gruppen von Abzügen, die Beiträge zu den Sozialversicherungen
 und die steuerlichen Abzüge. Als Arbeitgeber sind wir verpflichtet, die
 Abzüge einzubehalten und an die zuständigen Stellen, Finanzämter und
 Sozialversicherungsträger abzuführen. Und genau darum geht es jetzt.
-</section>
 
-<section>
+
+
 ### Die Sozialversicherungen
 
 #### Wie alles begann
@@ -422,11 +420,6 @@ Berufsberatung und Arbeitsvermittlung
 [[ ]] Arbeitslosenversicherung
 [[ ]] Unfallversicherung
 
-
-</section>
-
-
-Sozialversicherungen, Arbeitszeitmodelle, Arbeitsentgelt, Lohnarten, Personalzusatzkosten, Brutto- und Nettoentgelt (ELStAM), Verbuchung Steuerabzugsbeträge und Sozialversicherungsabgaben, Fristeneinhaltung
 
 
 
