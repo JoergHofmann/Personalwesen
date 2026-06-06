@@ -12,7 +12,6 @@ date: @(Monat[heute.month].MMMM) @(heute.year)
 link: css/jho-lia.css
 logo: @(Projekt.logo)
 wilhelm1: https://de.wikipedia.org/wiki
-script:   https://cdn.jsdelivr.net/gh/MINT-the-GAP/lia-navigation@0.0.1/dist/index.js
 -->
 
 # @title

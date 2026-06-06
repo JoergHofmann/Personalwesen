@@ -6,14 +6,13 @@ title: Personalwesen
 subtitle: Grundlagen für die kaufmännische Ausbildung
 www_cover: job-interview.svg
 date: Juni 2026
-version: fd565bb
+version: 00c9418
 
 icon: images/strichmaennchen.svg
 date: Juni 2026
 link: css/jho-lia.css
 logo: images/strichmaennchen.svg
 wilhelm1: https://de.wikipedia.org/wiki
-script:   https://cdn.jsdelivr.net/gh/MINT-the-GAP/lia-navigation@0.0.1/dist/index.js
 -->
 
 # @title
