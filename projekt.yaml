@@ -1,13 +1,17 @@
 lang: "de-DE"
 contextlang: "de"
 shortlang: "de"
+hugo:
+    theme: "hugo-theme-relearn"
 title: "Personalwesen"
 subtitle: "Grundlagen für die kaufmännische Ausbildung"
 ihkBeruf: "Kaufleute für Büromanagement"
 ihkLernfeld: "Lernfeld 8"
 pagetitle: "Personalwesen"
 shorttitle: "Personalwesen"
-pdfCover: "job-interview.png"
-wwwCover: "job-interview.svg"
-logo: "images/strichmaennchen.svg"
-icon: "images/strichmaennchen.svg"
+pdfCover: job-interview.png
+wwwCover: job-interview.svg
+logo: strichmaenchen.png
+icon: strichmaenchen.svg
+Rechtstand: 2026
+

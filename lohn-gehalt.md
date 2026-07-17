@@ -1,7 +1,7 @@
-### Zum Einstieg: Das Zwiebelpapier
+## Zum Einstieg: Das Zwiebelpapier
 Es könnte so schön sein, wenn wir jeden Monat den Betrag ausgezahlt bekämen,
-der auch im Arbeitsvertrag genannt ist.Stattdessen bekomen wir jeden Monat eine
-Aufstellung, was uns alles abgezogen wurde, und wie beim Zwiebelschneiden
+der auch im Arbeitsvertrag genannt ist. Stattdessen bekomen wir jeden Monat eine
+Aufstellung, was uns alles abgezogen wurde und wie beim Zwiebelschneiden
 kommen uns dann die Tränen.
 
 Es sind zwei Gruppen von Abzügen, die Beiträge zu den Sozialversicherungen
@@ -11,11 +11,13 @@ Sozialversicherungsträger abzuführen. Und genau darum geht es jetzt.
 
 
 
-### Die Sozialversicherungen
+## Die Sozialversicherungen
 
-#### Wie alles begann
+### Wie alles begann
 
-<div style="width: 30%; margin:auto">![](images/Bismarck_am_Schreibtisch.png)</div>
+Kennen Sie diesen Herrn?
+
+<div style="width: 30%; margin:auto">![](../images/Bismarck_am_Schreibtisch.png)</div>
 
 Wenn sie im Geschichtsunterricht aufgepasst haben ganz bestimmt. Es ist Otto von Bismarck, der erste deutsche Reichskanzler. Dieser ist nicht
 nur als Namensgeber für eine [Fischspezialität](https://de.wikipedia.org/wiki/Bismarckhering), sondern auch als Vater der deutschen Sozielversicherungen bekannt.
@@ -41,14 +43,36 @@ als die Finanzierung vom Kapitaldeckungs- auf das Umlageverfahren umgestellt und
 Bruttolöhne gekoppelt wurde. Seitdem werden die Renten und die übrigen Sozialversicherungen nicht mehr durch
 ansparen, sondern durch die Beiträge der Versicherten finanziert. Man spricht daher auch vom Generationenvertrag.
 
-#### Sozialversicherungpflicht
+### Sozialversicherungpflicht
 
 Alle Arbeitnehmer sind, sofern sie mehr als geringfügig beschäftigt sind (Minijobber), in den Sozialversicherungen pflichtversichert. 
 Der Gesetzgeber legt die Beitragssätze fest. Krankenkassen dürfen neben dem gesetzlichen Beitrag einen Zusatzbeitrag erheben.
 So soll ein gewisser Wettbewerb unter den Krankenkassen ermöglicht werden.
 
 
-#### Die Rentenversicherung
+### Die Rentenversicherung
+
+|                                     |                                                                                       |
+|------------------------------------:|:--------------------------------------------------------------------------------------|
+|Aufgabe:                             |- Zahlung von Renten im Alter, oder wegen Berufs- oder Erwerbsunfähigkeit              |
+|                                     |- Erhalt, Verbesserung und wiederherstellung der Erwerbsfähigkeit                      |
+|                                     |- Renten für Hinterbliebene                                                            |
+|                                     |                                                                                       |
+|Träger:                              |Deutsche Rentenversicherung                                                            |
+|                                     |                                                                                       |
+|Versicherungspflicht:                |alle gegen Entgelt beschäftigte Arbeiter, Angestellte und Auszubildende                |
+|                                     |                                                                                       |
+|Leistungen:                          |Nicht viele                                                                            |
+|                                     |                                                                                       |
+|Beiträge:                            |18,6%                                                                                  |
+|                                     |                                                                                       |
+|Beitragsbemessungsgrenze:            |Alte Bundesländer: 7.100,00€,                                                          |
+|                                     |neue Bundesländer: 6.700,00€                                                           |
+|                                     |                                                                                       |
+
+
+ 
+### Die Krankenversicherung
 
 |                         |                           |
 |------------------------:|:--------------------------|
@@ -67,7 +91,8 @@ So soll ein gewisser Wettbewerb unter den Krankenkassen ermöglicht werden.
 
 
 
-#### Die Krankenversicherung
+
+### Die Pflegeversicherung
 
 |                         |                           |
 |------------------------:|:--------------------------|
@@ -87,27 +112,7 @@ So soll ein gewisser Wettbewerb unter den Krankenkassen ermöglicht werden.
 
 
 
-#### Die Pflegeversicherung
-
-|                         |                           |
-|------------------------:|:--------------------------|
-|Aufgabe: |         |
-|         |      |
-|Träger:   |       |
-|        |         |
-|Versicherungspflicht:  |            |
-|         |
-|Leistungen:  |             |
-|   |     |
-|Beitrag:     |         |
-|           |        |
-|Beitragsbemessungsgrenze:      |        |
-
-
-
-
-
-#### Die Arbeitslosenversicherung
+### Die Arbeitslosenversicherung
 
 |                         |                           |
 |------------------------:|:--------------------------|

@@ -3,23 +3,21 @@
 <project name = "Personalwesen">
 	<target name="prepare" unless="done">
 		<property environment="env" />
-		<property name="prefix" value="KBM" />
 		<property name="ftpUser" value="jhoeho"/>
 		<property name="ftpPw" value="J13ei$G$er64H"/>
 		<property name="ftpServer" value="sftp://www342.your-server.de"/>
 		<property name="ftpPfad" value="public_html/pecunia-non-olet/liascript"/>
-		<delete includeemptydirs="true">
-		    <fileset dir = "0_TMP" includes = "**/*"/>
-		    <fileset dir = "0_OUT" includes = "**/*"/>
-		    <!-- <fileset dir = "${env.local_www_dir}/${ant.project.name}" includes = "**/*"/> -->
-		</delete>
-		<!-- Alle temporären Verzeichnisse leeren. -->
-		<delete includeemptydirs="true">
+		<property name="local_www_dir" value="/media/jho64/web@Nautilus/${ant.project.name}"/>
+		
+<!-- Alle temporären Verzeichnisse leeren. -->
+		<delete includeemptydirs="true" >
 			<fileset dir = "0_TMP" includes = "**/*"/>
 			<fileset dir = "0_OUT" includes = "**/*"/>
-		    <!-- <fileset dir = "0_${prefix}_HUGO/content" includes = "**/*"/>
-			<fileset dir = "0_${prefix}_HUGO/assets" includes = "**/*"/>
-			<fileset dir = "${env.local_www_dir}/${ant.project.name}" includes = "**/*"/> -->
+		    <fileset dir = "0_${ant.project.name}.lia" includes = "**/*"/>
+		    <fileset dir = "0_${ant.project.name}.hugo/content" includes = "**/*"/>
+			<fileset dir = "0_${ant.project.name}.hugo/assets" includes = "**/*"/>
+			<fileset dir = "0_${ant.project.name}.hugo/static" includes = "**/*"/>
+			<fileset dir = "${env.local_www_dir}/${ant.project.name}" includes = "**/*"/>
 		</delete>
 		<copy todir="0_TMP" overwrite="true">
 			<fileset dir=".">
@@ -33,49 +31,36 @@
 	</target>
 
 	<target name="copy4lia" unless="done">
-	    <mkdir dir="${ant.project.name}.lia/images" />
-	    <mkdir dir="${ant.project.name}.lia/scripts" />
-	    <mkdir dir="${ant.project.name}.lia/css" />
-	    <mkdir dir="${ant.project.name}.lia/videos" />
-	    <copy todir="${ant.project.name}.lia/images" overwrite="true">
+	    <mkdir dir="0_${ant.project.name}.lia/images" />
+	    <mkdir dir="0_${ant.project.name}.lia/scripts" />
+	    <mkdir dir="0_${ant.project.name}.lia/css" />
+	    <mkdir dir="0_${ant.project.name}.lia/videos" />
+	    <copy todir="0_${ant.project.name}.lia/images" overwrite="true">
 			<fileset dir="images" includes="*.png" />
 			<fileset dir="images" includes="*.svg" />
 			<fileset dir="images" includes="*.gif" />
 			<fileset dir="images" includes="*.jpg" />
 			<fileset dir="images" includes="*.pdf" />
 		</copy>
-	    <copy todir="${ant.project.name}.lia/css" overwrite="true">
+	    <copy todir="0_${ant.project.name}.lia/css" overwrite="true">
 			<fileset dir="css" includes="*.css" />
 		</copy>
-	    <copy todir="${ant.project.name}.lia/scripts" overwrite="true">
+	    <copy todir="0_${ant.project.name}.lia/scripts" overwrite="true">
 			<fileset dir="scripts" includes="*.js" />
 		</copy>
 	</target>
 
 	<target name="copy4hugo" depends="prepare" unless="done">
-		<mkdir dir="0_HUGO/assets/images" />
-		<copy todir="0_HUGO/assets/images" overwrite="true">
+		<mkdir dir="0_${ant.project.name}.hugo/assets/images" />
+		<copy todir="0_${ant.project.name}.hugo/assets/images" overwrite="true">
 			<fileset dir="images" includes="*.png" />
 			<fileset dir="images" includes="*.svg" />
 			<fileset dir="images" includes="*.gif" />
 			<fileset dir="images" includes="*.jpg" />
 			<fileset dir="images" includes="*.pdf" />
 		</copy>
-        <copy file="hugo/hugo.yaml" tofile="0_HUGO/hugo.yaml" />
-		<copy todir="0_HUGO/layouts/partials" overwrite="true">
-			<fileset dir="hugo/layouts/partials">
-				<include name="*.*" />
-			</fileset>
-		</copy>
-		<copy todir="0_TMP" >
-			<fileset dir="hugo">
-				<include name="*.lua" />
-				<include name="*.yaml" />
-				<include name="*.tex" />
-				<include name="*.html" />
-				<include name="*.md" />
-			</fileset>
-		</copy>
+        <move file="0_${ant.project.name}.hugo/assets/images/strichmaennchen.svg" tofile="0_${ant.project.name}.hugo/assets/images/favicon.svg" />
+	    <property name="done" value="done" />
 	</target>
 
 	<target name="copy4pdf" depends="prepare" unless="done">
@@ -88,48 +73,32 @@
 		</copy>
 	</target>
 
-	<target name="ihk-lia" depends="prepare" unless="done">
-	    <antcall target="copy4lia" />
-	    <exec executable="ypp" dir="0_TMP" output="Personalwesen.lia/ihk-pruefungen.md" logError="true">
-		<arg line="-l liascript.lua ihk-pruefungen.md" />
-	    </exec>
-	    <property name="done" value="done" />
-	</target>
-
-
-
-	<target name="pt-lia" depends="prepare" unless="done">
-	    <antcall target="copy4lia" />
-	    <exec executable="ypp" dir="0_TMP" output="Personalwesen.lia/pt-${ant.project.name}.md" logError="true">
-		<arg line="-l liascript.lua pruefungstraining-lia.md" />
-	    </exec>
-	    <property name="done" value="done" />
-	</target>
-
-	<target name="lia-aufgaben" depends="prepare" unless="done">
-	    <antcall target="copy4lia" />
-	    <exec executable="ypp" dir="0_TMP" output="Personalwesen.lia/${ant.project.name}.md" logError="true">
-		<arg line="-l liascript.lua main-lia-aufgaben.md" />
-	    </exec>
-	    <property name="done" value="done" />
-	</target>
-
-
-	<target name="lia" depends="prepare" unless="done">
-	    <antcall target="copy4lia" />
-	    <exec executable="ypp" dir="0_TMP" output="${ant.project.name}.lia/${ant.project.name}.md" logError="true">
-		<arg line="-l liascript.lua main-lia.md" />
-	    </exec>
-	    <property name="done" value="done" />
-	</target>
-
 
 	<target name="hugo" depends="prepare" unless="done">
 	    <antcall target="copy4hugo" />
-	    <exec executable="ypp" output="0_${prefix}_HUGO/content/_index.pdc" logError="true">
-		<arg line="-l hugo.lua titelseite.md" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/hugo.yaml" logError="true">
+		    <arg line="-l hugo.lua hugo/hugo.yaml" />
 	    </exec>
-	    <apply executable="ypp" dir="0_TMP" dest="0_TMP" logError="true">
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/_index.pdc" logError="true">
+		    <arg line="-l hugo.lua main-hugo.md" />
+	    </exec>
+		<mkdir dir="0_${ant.project.name}.hugo/content/AufgabenUndZiele" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/AufgabenUndZiele/_index.pdc" logError="true">
+		    <arg line="-l hugo.lua AufgabenUndZiele.md" />
+	    </exec>
+		<mkdir dir="0_${ant.project.name}.hugo/content/PersonalbestandAnalysieren" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/PersonalbestandAnalysieren/_index.pdc" logError="true">
+		    <arg line="-l hugo.lua PersonalbestandAnalysieren.md" />
+	    </exec>
+		<mkdir dir="0_${ant.project.name}.hugo/content/ArbeitsPersonalrecht" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/ArbeitsPersonalrecht/_index.pdc" logError="true">
+		    <arg line="-l hugo.lua ArbeitsPersonalrecht.md" />
+	    </exec>
+		<mkdir dir="0_${ant.project.name}.hugo/content/LohnGehalt" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/LohnGehalt/_index.pdc" logError="true">
+		    <arg line="-l hugo.lua LohnGehalt.md" />
+	    </exec>
+	    <!-- <apply executable="ypp" dir="0_TMP" dest="0_TMP" logError="true">
 		<arg line="-l hugo.lua" />
 		<srcfile />
 		<arg line="-o " />
@@ -139,7 +108,7 @@
 			<exclude name="${prefix}-kap-h.md" />
 		</fileset>
 		<mapper type="glob" from="*.md" to="*.pdc" />
-	    </apply>
+	    </apply> -->
 	    <property name="done" value="done" />
 	</target>
 

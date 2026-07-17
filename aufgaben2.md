@@ -5,7 +5,7 @@ Welche der folgenden Aussagen zu Aufbewahrungsfristen ist zutreffend?
 [[ ]] Alle Aufbewahrungsfristen beginnen mit dem Datum der Belegausstellung.
 [[ ]] Lohnkonten der Arbeitnehmer müssen nicht aufbewahrt werden. Erforderliche Nachweise können mittels der Entgeltabrechnungen erbracht werden.
 [[ ]] Die Aufbewahrungsfrist für die Lohnkonten der Arbeitnehmer beläuft sich auf 2 Jahre.
-[[ ]] Die Aufbewahrungsfrist für die Lohnkonten der Arbeitnehmer beläuft sich auf 4 Jahre.
+[[x]] Die Aufbewahrungsfrist für die Lohnkonten der Arbeitnehmer beläuft sich auf 6 Jahre.
 
 
 
@@ -274,7 +274,7 @@ Welche Aussage zu Sonntagsarbeit und den entsprechenden Zuschlägen ist korrekt?
 ### Aufgabe
 Die Sozialversicherungen beinhalten unterschiedliche Leistungen. Welche der Sozialversicherungen ist für die genannte Leistungen zuständig? Ärztliche und zahnärztliche Bratung und Behandlung.  
 
-[[ ]] Krankenversicherung
+[[x]] Krankenversicherung
 [[ ]] Rentenversicherung
 [[ ]] Arbeitslosenversicherung
 [[ ]] Unfallversicherung
@@ -287,7 +287,7 @@ Die Sozialversicherungen beinhalten unterschiedliche Leistungen. Welche der Sozi
 Die Sozialversicherungen beinhalten unterschiedliche Leistungen. Welche der Sozialversicherungen ist für die genannte Leistungen zuständig? Förderung der Arbeitsaufnahme und beruflichen Rehabilitation.  
 
 [[ ]] Pflegeversicherung
-[[ ]] Arbeitslosenversicherung
+[[x]] Arbeitslosenversicherung
 [[ ]] Krankenversicherung
 [[ ]] Rentenversicherung
 [[ ]] Unfallversicherung
@@ -301,7 +301,7 @@ Welche der folgenden Steuerklassen ist für das Fallbeispiel die richtige Steuer
 [[ ]] V
 [[ ]] III
 [[ ]] IV
-[[ ]] II
+[[x]] II
 [[ ]] I
 
 
@@ -313,7 +313,7 @@ Welche der folgenden Steuerklassen ist für das Fallbeispiel die richtige Steuer
 [[ ]] I
 [[ ]] IV
 [[ ]] II
-[[ ]] III
+[[x]] III
 [[ ]] VI
 
 
@@ -326,7 +326,7 @@ Welche der folgenden Steuerklassen ist für das Fallbeispiel die richtige Steuer
 [[ ]] III
 [[ ]] I
 [[ ]] II
-[[ ]] IV
+[[x]] IV
 
 
 
@@ -334,7 +334,7 @@ Welche der folgenden Steuerklassen ist für das Fallbeispiel die richtige Steuer
 Arbeitnehmer werden in Deutschland entsprechend ihrer persönlichen Verhältnisse unterschiedlich besteuert. Ordnen Sie den nachfolgenden Arbeitnehmer der richtigen Steuerklasse zu. Herr Müller übt neben seiner Hauptbeschäftigung in Teilzeit und einem Verdienst von 1.400,00 € monatlich eine weitere Tätigkeit mit einem Verdienst von 650,00 € monatlich aus. Wie wird die Nebentätigkeit besteuert?  
 
 [[ ]] III oder IV
-[[ ]] VI
+[[x]] VI
 [[ ]] I
 [[ ]] IV
 [[ ]] II
@@ -349,7 +349,7 @@ Wer ist der Träger für die Arbeitslosenversicherung?   
 [[ ]] Pflegekassen der Krankenversicherungsträger
 [[ ]] Ersatzkassen
 [[ ]] Berufsgenossenschaft
-[[ ]] Bundesagentur für Arbeit
+[[x]] Bundesagentur für Arbeit
 
 
 
@@ -359,7 +359,7 @@ Wer ist der Träger für die gesetzliche Unfallversicherung?   
 
 [[ ]] Gesetzliche Krankenkassen
 [[ ]] Bundesagentur für Arbeit
-[[ ]] Berufsgenossenschaft
+[[x]] Berufsgenossenschaft
 [[ ]] Pflegekassen der Krankenversicherungsträger
 [[ ]] Deutsche Rentenversicherung
 
@@ -372,6 +372,6 @@ Die Sozialversicherungen beinhalten unterschiedliche Leistungen. Welche der Sozi
 [[ ]]  Pflegeversicherung
 [[ ]]  Rentenversicherung
 [[ ]]  Unfallversicherung
-[[ ]]  Krankenversicherung
+[[x]]  Krankenversicherung
 [[ ]]  Arbeitslosenversicherung
 

@@ -25,12 +25,9 @@ wilhelm1: https://de.wikipedia.org/wiki
 
 @author@(br)
 @email@(br)
-Git: @version
-
+Git: @version@(br)@(br)
+Rechtsstand: @(Projekt.Rechtstand)
 </div>
 
 @include "personalwesen.md"
 
-## Mein ceterum censeo
-
-@include "//home/jho64/Dokumente/AllAboutMe/AboutMeText/ceterum-censeo.md"

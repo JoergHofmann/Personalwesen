@@ -1,4 +1,43 @@
 baseURL: https://example.org/
-languageCode: de-DE
-title: Grundlagen Personalwesen
+defaultContentLanguage: de
+languages:
+  de:
+    languageCode: de
+    weight: 1
+    label: Deutsch
+    locale: de-DE
+titleCaseStyle: none
+params:
+  contact:
+    email: @(Autor.mail)
+    phone: @(Autor.tel)
+  logo:
+     direction: column
+     src: /images/@(Projekt.logo)
+title: @(Projekt.title)
+subtitle: @(Projekt.subtitle)
 theme: hugo-theme-relearn
+contentTypes:
+  text/markdown: {}
+  text/pandoc: {}
+markup:
+  defaultMarkdownHandler: "pandoc"
+
+security:
+  exec:
+    allow:
+        - '^pandoc$'
+
+outputs:
+  home:
+  - html
+  - rss
+  - print
+  page:
+  - html
+  - print
+  section:
+  - html
+  - rss
+  - print
+
