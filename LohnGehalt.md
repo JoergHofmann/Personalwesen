@@ -1,7 +1,8 @@
 ---
 title: "Löhne und Gehälter"
-type: "chapter"
-weight: 4
+weight: 500
+params:
+  bookFlatSection: true
 ---
 
 @include "lohn-gehalt.md"

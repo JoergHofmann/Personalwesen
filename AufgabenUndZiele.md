@@ -1,7 +1,8 @@
 ---
 title: "Aufgaben und Ziele"
-type: "chapter"
-weight: 1
+weight: 200
+params:
+  bookFlatSection: true
 ---
 
 @include "aufgaben.md"

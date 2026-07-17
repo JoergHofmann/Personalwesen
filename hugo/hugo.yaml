@@ -1,22 +1,22 @@
-baseURL: https://example.org/
-defaultContentLanguage: de
-languages:
-  de:
-    languageCode: de
-    weight: 1
-    label: Deutsch
-    locale: de-DE
-titleCaseStyle: none
+baseURL: @(Projekt.hugo.baseURL)
+languageCode: de-DE
+
 params:
-  contact:
-    email: @(Autor.mail)
-    phone: @(Autor.tel)
-  logo:
-     direction: column
-     src: /images/@(Projekt.logo)
+    BookSection: 'docs'
+    contact:
+      email: @(Autor.mail)
+      phone: @(Autor.tel)
+    logo:
+       direction: column
+       src: /images/@(Projekt.logo)
+
 title: @(Projekt.title)
 subtitle: @(Projekt.subtitle)
-theme: hugo-theme-relearn
+
+module:
+  imports:
+  - path: @(Projekt.hugo.themeURL)
+
 contentTypes:
   text/markdown: {}
   text/pandoc: {}
@@ -27,17 +27,5 @@ security:
   exec:
     allow:
         - '^pandoc$'
-
-outputs:
-  home:
-  - html
-  - rss
-  - print
-  page:
-  - html
-  - print
-  section:
-  - html
-  - rss
-  - print
+        - '^go$'
 

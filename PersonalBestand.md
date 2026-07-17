@@ -1,8 +1,7 @@
 ---
 title: "Den Personalbestand analysieren"
-weight: 300
-params:
-  bookFlatSection: true
+type: "chapter"
+weight: 2
 ---
 
 @include "pAnalyse.md"

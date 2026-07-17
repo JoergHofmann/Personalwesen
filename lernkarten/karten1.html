@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Wissenscheck</title>
+    <style>
+        /* CSS: Layout und visuelles Feedback */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #fafafa;
+        }
+        .question-title {
+            font-weight: 600;
+            margin-top: 0;
+            color: #34495e;
+        }
+        .option {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .input-gap {
+            padding: 6px 10px;
+            border: 2px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        button {
+            display: block;
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        /* Feedback-Klassen */
+        .correct {
+            border-color: #2ecc71 !important;
+            background-color: #e8f8f5 !important;
+        }
+        .incorrect {
+            border-color: #e74c3c !important;
+            background-color: #fdeadc !important;
+        }
+        #result-box {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Wissenscheck: Webentwicklung</h1>
+
+    <!-- Aufgabe 1: Multiple Choice -->
+    <div class="card" id="q1-card">
+        <p class="question-title">Frage 1: Welche Technologie steuert die Programmlogik im Browser?</p>
+        <div class="option">
+            <label><input type="radio" name="question1" value="html"> HTML</label>
+        </div>
+        <div class="option">
+            <label><input type="radio" name="question1" value="css"> CSS</label>
+        </div>
+        <div class="option">
+            <label><input type="radio" name="question1" value="js" id="q1-correct"> JavaScript</label>
+        </div>
+    </div>
+
+    <!-- Aufgabe 2: Lückentext -->
+    <div class="card" id="q2-card">
+        <p class="question-title">Frage 2: Ergänze den Lückentext.</p>
+        <p>
+            Das Layout und Design einer Website definiert man standardmäßig mit der Stylesheet-Sprache 
+            <input type="text" id="q2-gap" class="input-gap" data-answer="css" placeholder="...">.
+        </p>
+    </div>
+
+    <!-- Absendebutton und Auswertung -->
+    <button onclick="evaluateQuiz()">Aufgaben prüfen</button>
+    <div id="result-box"></div>
+</div>
+
+<script>
+    // JavaScript: Validierung und Punkteberechnung
+    function evaluateQuiz() {
+        let score = 0;
+        const totalQuestions = 2;
+
+        // --- Auswertung Aufgabe 1 (Multiple Choice) ---
+        const q1Card = document.getElementById("q1-card");
+        const q1CorrectRadio = document.getElementById("q1-correct");
+        
+        if (q1CorrectRadio.checked) {
+            score++;
+            q1Card.className = "card correct";
+        } else {
+            q1Card.className = "card incorrect";
+        }
+
+        // --- Auswertung Aufgabe 2 (Lückentext) ---
+        const q2Card = document.getElementById("q2-card");
+        const gapInput = document.getElementById("q2-gap");
+        const userAnswer = gapInput.value.trim().toLowerCase();
+        const correctAnswer = gapInput.getAttribute("data-answer");
+
+        if (userAnswer === correctAnswer) {
+            score++;
+            q2Card.className = "card correct";
+            gapInput.className = "input-gap correct";
+        } else {
+            q2Card.className = "card incorrect";
+            gapInput.className = "input-gap incorrect";
+        }
+
+        // --- Gesamtergebnis anzeigen ---
+        const resultBox = document.getElementById("result-box");
+        resultBox.style.display = "block";
+        
+        if (score === totalQuestions) {
+            resultBox.style.backgroundColor = "#2ecc71";
+            resultBox.style.color = "white";
+            resultBox.style.borderColor = "#27ae60";
+            resultBox.innerText = `Perfekt! Du hast alle ${score} von ${totalQuestions} Aufgaben richtig gelöst. 🎉`;
+        } else {
+            resultBox.style.backgroundColor = "#e67e22";
+            resultBox.style.color = "white";
+            resultBox.style.borderColor = "#d35400";
+            resultBox.innerText = `Du hast ${score} von ${totalQuestions} Aufgaben richtig gelöst. Korrigiere die rot markierten Bereiche! ✨`;
+        }
+    }
+</script>
+
+</body>
+</html>
+

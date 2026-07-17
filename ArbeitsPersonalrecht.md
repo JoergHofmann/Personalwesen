@@ -1,7 +1,8 @@
 ---
 title: "Arbeits- und Personalrecht"
-type: "chapter"
-weight: 3
+weight: 400
+params:
+  bookFlatSection: true
 ---
 
 @include "arbeitsrecht.md"

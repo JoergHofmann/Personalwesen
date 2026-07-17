@@ -1,7 +1,7 @@
 ## Zum Einstieg: Das Zwiebelpapier
 Es könnte so schön sein, wenn wir jeden Monat den Betrag ausgezahlt bekämen,
 der auch im Arbeitsvertrag genannt ist. Stattdessen bekomen wir jeden Monat eine
-Aufstellung, was uns alles abgezogen wurde und wie beim Zwiebelschneiden
+Aufstellung dessen, was uns alles abgezogen wurde und wie beim Zwiebelschneiden
 kommen uns dann die Tränen.
 
 Es sind zwei Gruppen von Abzügen, die Beiträge zu den Sozialversicherungen
@@ -17,10 +17,10 @@ Sozialversicherungsträger abzuführen. Und genau darum geht es jetzt.
 
 Kennen Sie diesen Herrn?
 
-<div style="width: 30%; margin:auto">![](../images/Bismarck_am_Schreibtisch.png)</div>
+<div style="width: 30%; margin:auto">![](../../images/Bismarck_am_Schreibtisch.png)</div>
 
 Wenn sie im Geschichtsunterricht aufgepasst haben ganz bestimmt. Es ist Otto von Bismarck, der erste deutsche Reichskanzler. Dieser ist nicht
-nur als Namensgeber für eine [Fischspezialität](https://de.wikipedia.org/wiki/Bismarckhering), sondern auch als Vater der deutschen Sozielversicherungen bekannt.
+nur als Namensgeber für eine bekannte [Fischspezialität](https://de.wikipedia.org/wiki/Bismarckhering), sondern auch als Vater der deutschen Sozielversicherungen bekannt.
 
 Im 19. Jahrhundert kam es durch die Industrialisierung zu gravierenden gesellschaftlichen Veränderungen.
 Viele Handwerker wurden zu Fabrikarbeitern und die Landbevölkerung zog in die Städte, die sie sich von

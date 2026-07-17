@@ -12,11 +12,12 @@
 <!-- Alle temporären Verzeichnisse leeren. -->
 		<delete includeemptydirs="true" >
 			<fileset dir = "0_TMP" includes = "**/*"/>
-			<fileset dir = "0_OUT" includes = "**/*"/>
-		    <fileset dir = "0_${ant.project.name}.lia" includes = "**/*"/>
-		    <fileset dir = "0_${ant.project.name}.hugo/content" includes = "**/*"/>
-			<fileset dir = "0_${ant.project.name}.hugo/assets" includes = "**/*"/>
-			<fileset dir = "0_${ant.project.name}.hugo/static" includes = "**/*"/>
+			<fileset dir = "0_HTML" includes = "**/*"/>
+		    <fileset dir = "0_LIA" includes = "**/*"/>
+		    <fileset dir = "0_PDF" includes = "**/*"/>
+		    <fileset dir = "0_HUGO/content" includes = "**/*"/>
+			<fileset dir = "0_HUGO/assets" includes = "**/*"/>
+			<fileset dir = "0_HUGO/static" includes = "**/*"/>
 			<fileset dir = "${env.local_www_dir}/${ant.project.name}" includes = "**/*"/>
 		</delete>
 		<copy todir="0_TMP" overwrite="true">
@@ -51,16 +52,40 @@
 	</target>
 
 	<target name="copy4hugo" depends="prepare" unless="done">
-		<mkdir dir="0_${ant.project.name}.hugo/assets/images" />
-		<copy todir="0_${ant.project.name}.hugo/assets/images" overwrite="true">
+		<mkdir dir="0_${ant.project.name}.hugo/content/docs" />
+		<copy file="dummy.pdc" tofile="0_${ant.project.name}.hugo/content/docs/_index.pdc" overwrite="true" />
+		<copy todir="0_${ant.project.name}.hugo/static/images" overwrite="true">
 			<fileset dir="images" includes="*.png" />
 			<fileset dir="images" includes="*.svg" />
 			<fileset dir="images" includes="*.gif" />
 			<fileset dir="images" includes="*.jpg" />
 			<fileset dir="images" includes="*.pdf" />
 		</copy>
-        <move file="0_${ant.project.name}.hugo/assets/images/strichmaennchen.svg" tofile="0_${ant.project.name}.hugo/assets/images/favicon.svg" />
+        <move file="0_${ant.project.name}.hugo/static/images/strichmaennchen.svg" tofile="0_${ant.project.name}.hugo/static/images/favicon.svg" />
 	    <property name="done" value="done" />
+	</target>
+
+	<target name="init-hugo" depends="prepare" unless="done">
+        <antcall target="copy4hugo" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/hugo.yaml" logError="true">
+		<arg line="-l hugo.lua hugo/hugo.yaml" />
+	    </exec>
+	    <property name="done" value="done" />
+	</target>
+
+	<target name="copy4html" depends="prepare" unless="done">
+		<mkdir dir="0_HTML/css" />
+		<mkdir dir="0_HTML/scripts" />
+		<copy todir="0_HTML/images" overwrite="true">
+			<fileset dir="images" includes="*.png" />
+			<fileset dir="images" includes="*.svg" />
+			<fileset dir="images" includes="*.gif" />
+			<fileset dir="images" includes="*.jpg" />
+			<fileset dir="images" includes="*.pdf" />
+		</copy>
+		<copy todir="0_HTML/css" overwrite="true">
+			<fileset dir="css" includes="*.css" />
+		</copy>
 	</target>
 
 	<target name="copy4pdf" depends="prepare" unless="done">
@@ -76,26 +101,23 @@
 
 	<target name="hugo" depends="prepare" unless="done">
 	    <antcall target="copy4hugo" />
-	    <exec executable="ypp" output="0_${ant.project.name}.hugo/hugo.yaml" logError="true">
-		    <arg line="-l hugo.lua hugo/hugo.yaml" />
-	    </exec>
 	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/_index.pdc" logError="true">
 		    <arg line="-l hugo.lua main-hugo.md" />
 	    </exec>
-		<mkdir dir="0_${ant.project.name}.hugo/content/AufgabenUndZiele" />
-	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/AufgabenUndZiele/_index.pdc" logError="true">
+		<mkdir dir="0_${ant.project.name}.hugo/content/docs/AufgabenUndZiele" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/docs/AufgabenUndZiele/_index.pdc" logError="true">
 		    <arg line="-l hugo.lua AufgabenUndZiele.md" />
 	    </exec>
-		<mkdir dir="0_${ant.project.name}.hugo/content/PersonalbestandAnalysieren" />
-	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/PersonalbestandAnalysieren/_index.pdc" logError="true">
+		<mkdir dir="0_${ant.project.name}.hugo/content/docs/PersonalbestandAnalysieren" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/docs/PersonalbestandAnalysieren/_index.pdc" logError="true">
 		    <arg line="-l hugo.lua PersonalbestandAnalysieren.md" />
 	    </exec>
-		<mkdir dir="0_${ant.project.name}.hugo/content/ArbeitsPersonalrecht" />
-	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/ArbeitsPersonalrecht/_index.pdc" logError="true">
+		<mkdir dir="0_${ant.project.name}.hugo/content/docs/ArbeitsPersonalrecht" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/docs/ArbeitsPersonalrecht/_index.pdc" logError="true">
 		    <arg line="-l hugo.lua ArbeitsPersonalrecht.md" />
 	    </exec>
-		<mkdir dir="0_${ant.project.name}.hugo/content/LohnGehalt" />
-	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/LohnGehalt/_index.pdc" logError="true">
+		<mkdir dir="0_${ant.project.name}.hugo/content/docs/LohnGehalt" />
+	    <exec executable="ypp" output="0_${ant.project.name}.hugo/content/docs/LohnGehalt/_index.pdc" logError="true">
 		    <arg line="-l hugo.lua LohnGehalt.md" />
 	    </exec>
 	    <!-- <apply executable="ypp" dir="0_TMP" dest="0_TMP" logError="true">
@@ -124,7 +146,21 @@
 		<exec executable="context" dir="0_TMP">
 			<arg line="pt-${ant.project.name}.tex --result=pt-${ant.project.name}.pdf" />
 		</exec>
-		<move file="0_TMP/pt-${ant.project.name}.pdf" tofile="0_OUT/pt-${ant.project.name}.pdf" />
+		<move file="0_TMP/pt-${ant.project.name}.pdf" tofile="0_${ant.project.name}/pt-${ant.project.name}.pdf" />
+		<property name="done" value="done" />
+	</target>
+
+	<target name="html" depends="copy4html" unless="done">
+		<exec executable="ypp" dir = "0_TMP" output="${ant.project.name}.md" logError="true">
+			<arg line="-l html5.lua main-html.md" />
+		</exec>
+		<exec executable="pandoc" dir="0_TMP">
+			<arg line="${ant.project.name}.md -t html5 --css=css/jho-html.css --template=jho --toc -s -o ${ant.project.name}.html" />
+		</exec>
+		<exec executable="pandoc" dir="0_TMP">
+			<arg line="${ant.project.name}.md -t html5 --css=css/jho-html.css --template=jho --toc -s -o ${ant.project.name}.html" />
+		</exec>
+		<move file="0_TMP/${ant.project.name}.html" tofile="0_HTML/${ant.project.name}.html" />
 		<property name="done" value="done" />
 	</target>
 
@@ -138,7 +174,7 @@
 		<exec executable="context" dir="0_TMP">
 			<arg line="${ant.project.name}.tex --result=${ant.project.name}.pdf" />
 		</exec>
-		<move file="0_TMP/${ant.project.name}.pdf" tofile="0_OUT/${ant.project.name}.pdf" />
+		<move file="0_TMP/${ant.project.name}.pdf" tofile="0_PDF/${ant.project.name}.pdf" />
 		<property name="done" value="done" />
 	</target>
 </project>

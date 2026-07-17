@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitner Lernkartei (HTML, CSS, JS)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 5px; }
+        
+        /* Leitner Boxen Übersicht */
+        .boxes-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .box-indicator {
+            background: #e2e8f0;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .box-1 { border-bottom: 4px solid #e74c3c; }
+        .box-2 { border-bottom: 4px solid #f1c40f; }
+        .box-3 { border-bottom: 4px solid #2ecc71; }
+
+        /* Karteikarte */
+        .card-display {
+            background: #fdfefe;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 30px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .card-box-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 11px;
+            background: #7f8c8d;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .answer-container {
+            display: none;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 15px;
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            background: #34495e;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 15px;
+        }
+        .action-btns {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .btn-wrong { background: #e74c3c; }
+        .btn-correct { background: #2ecc71; }
+        
+        #empty-message {
+            text-align: center;
+            display: none;
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Leitner Lern-Kartei</h1>
+    
+    <!-- Status-Anzeige der Boxen -->
+    <div class="boxes-overview">
+        <div class="box-indicator box-1">Box 1: <span id="count-1">0</span></div>
+        <div class="box-indicator box-2">Box 2: <span id="count-2">0</span></div>
+        <div class="box-indicator box-3">Box 3: <span id="count-3">0</span></div>
+    </div>
+
+    <!-- Kartenbereich -->
+    <div id="flashcard-area">
+        <div class="card-display">
+            <span class="card-box-tag" id="card-box-info">Box 1</span>
+            <div id="card-question">Lade Frage...</div>
+            <div id="card-answer" class="answer-container">Antwort</div>
+        </div>
+
+        <!-- Steuerung -->
+        <button id="btn-reveal" class="btn" onclick="revealAnswer()">Antwort aufdecken</button>
+        <div id="action-area" class="action-btns">
+            <button class="btn btn-wrong" onclick="handleResponse(false)">Falsch (Zurück zu Box 1)</button>
+            <button class="btn btn-correct" onclick="handleResponse(true)">Richtig (Nächste Box)</button>
+        </div>
+    </div>
+
+    <div id="empty-message">
+        🎉 Alle Karten liegen in Box 3! Du hast alles erfolgreich gelernt.
+    </div>
+</div>
+
+<script>
+    // 1. Rohdaten der Karteikarten (Pool)
+    const cardPool = [
+        { id: 1, q: "Was bedeutet das HTML-Attribut 'href'?", a: "Hypertext Reference (Gibt das Ziel eines Links an)" },
+        { id: 2, q: "Wofür steht CSS?", a: "Cascading Style Sheets" },
+        { id: 3, q: "Wie deklariert man eine konstante Variable in JavaScript?", a: "Mit dem Schlüsselwort 'const'" },
+        { id: 4, q: "Welches HTML-Element wird für JavaScript-Code genutzt?", a: "Das <script> Element" }
+    ];
+
+    // 2. Leitner-System Status initialisieren oder aus dem LocalStorage laden
+    let userProgress = JSON.parse(localStorage.getItem('leitnerProgress')) || {};
+
+    // Wenn kein Speicher existiert, starten alle Karten standardmäßig in Box 1
+    if (Object.keys(userProgress).length === 0) {
+        cardPool.forEach(card => {
+            userProgress[card.id] = 1; 
+        });
+        saveProgress();
+    }
+
+    let currentCard = null;
+
+    // 3. Fortschritt speichern
+    function saveProgress() {
+        localStorage.setItem('leitnerProgress', JSON.stringify(userProgress));
+    }
+
+    // 4. Update der Boxen-Zähler in der UI
+    function updateBoxCounters() {
+        let counts = { 1: 0, 2: 0, 3: 0 };
+        cardPool.forEach(card => {
+            let currentBox = userProgress[card.id];
+            counts[currentBox]++;
+        });
+        document.getElementById('count-1').innerText = counts[1];
+        document.getElementById('count-2').innerText = counts[2];
+        document.getElementById('count-3').innerText = counts[3];
+
+        // Wenn alle Karten in Box 3 sind, ist das Lernziel erreicht
+        if (counts[3] === cardPool.length) {
+            document.getElementById('flashcard-area').style.display = 'none';
+            document.getElementById('empty-message').style.display = 'block';
+        }
+    }
+
+    // 5. Nächste fällige Karte auswählen (Priorität auf Box 1, dann Box 2)
+    function pickNextCard() {
+        updateBoxCounters();
+        
+        // Suche zuerst Karten aus Box 1, danach aus Box 2
+        let eligibleCards = cardPool.filter(card => userProgress[card.id] === 1);
+        if (eligibleCards.length === 0) {
+            eligibleCards = cardPool.filter(card => userProgress[card.id] === 2);
+        }
+
+        // Falls noch Karten zu lernen sind, wähle eine zufällige aus den fälligen Boxen
+        if (eligibleCards.length > 0) {
+            currentCard = eligibleCards[Math.floor(Math.random() * eligibleCards.length)];
+            
+            // UI zurücksetzen
+            document.getElementById('card-question').innerText = currentCard.q;
+            document.getElementById('card-answer').innerText = currentCard.a;
+            document.getElementById('card-answer').style.display = 'none';
+            document.getElementById('card-box-info').innerText = `Box ${userProgress[currentCard.id]}`;
+            
+            document.getElementById('btn-reveal').style.display = 'block';
+            document.getElementById('action-area').style.display = 'none';
+        }
+    }
+
+    // 6. Antwort anzeigen
+    function revealAnswer() {
+        document.getElementById('card-answer').style.display = 'block';
+        document.getElementById('btn-reveal').style.display = 'none';
+        document.getElementById('action-area').style.display = 'grid';
+    }
+
+    // 7. Auswertung basierend auf Leitner-Logik
+    function handleResponse(isCorrect) {
+        let currentBox = userProgress[currentCard.id];
+
+        if (isCorrect) {
+            // Richtig: Rückt eine Box nach oben (Maximum Box 3)
+            if (currentBox < 3) {
+                userProgress[currentCard.id] = currentBox + 1;
+            }
+        } else {
+            // Falsch: Fällt knallhart zurück in Box 1
+            userProgress[currentCard.id] = 1;
+        }
+
+        saveProgress();
+        pickNextCard();
+    }
+
+    // App-Start
+    pickNextCard();
+</script>
+
+</body>
+</html>
+
